@@ -32,7 +32,6 @@ if (isset($submitPressed)) {
 }
 
 ?>
-
 <div class="container">
     <div >
             <div class="d-flex justify-content-center">
@@ -100,7 +99,11 @@ if (isset($submitPressed)) {
                 $results = fetchBookFromDb();
                 foreach ($results as $book) {
                     echo '<tr>';
-                    echo '<td>' . '<img width="80" src="uploads/cover.jpg' . $book['cover'] . '">' . '</td>';
+                    if($book['cover']!=''){
+                        echo '<td>'. $book['cover']. '</td>';
+                    }else{
+                        echo '<td><img src= "uploads/cover.jpg" style = width:100px; height :auto;> </td>';
+                    }
                     echo '<td>' . $book['isbn'] . '</td>';
                     echo '<td>' . $book['title'] . '</td>';
                     echo '<td>' . $book['author'] . '</td>';

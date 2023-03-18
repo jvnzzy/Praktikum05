@@ -87,16 +87,22 @@ if (isset($updatePressed)) {
     <div class="form-group mb-3">
     <input type="submit" name="btnUpdate" value="Update Genre" class="btn btn-success">
     </div>
-    <div class="form-container">
-    <form method="post" enctype="multipart/form-data">
-        <div class="form-group mb-3">
-            <input type="text" name="txtName" placeholder="File Name" class="form-control">
+
+    <div class = "container">
+        <div>
+            <h2>Current Cover</h2>
+            <form method="post" enctype="multipart/form-data">
+                <label for ="covered">New Cover</label>
+                <div  class="form-group mb-3">
+                    <input type="file" name="imageFile" accept="image/*" class="form-control">
+                </div>
+                <div  class="form-group mb-3">
+                    <input type="submit" name="btnUpload" value="Upload Image" class="btn btn-primary">
+                </div>
+
+
+            </form>
         </div>
-        <div class="form-group mb-3">
-            <input type="file" name="imageFile" accept="image/*" class="form-control">
-        </div>
-        <input type="submit" name="btnUpload" value="Upload Image" class="btn btn-primary">
-    </form>
     </div>
     </div>
     </form>

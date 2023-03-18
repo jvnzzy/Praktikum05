@@ -85,19 +85,27 @@ if (isset($updatePressed)) {
             </select>
         </div>
     <div class="form-group mb-3">
-    <input type="submit" name="btnUpdate" value="Update Genre" class="btn btn-success">
+    <input type="submit" name="btnUpdate" value="Update Book" class="btn btn-success">
     </div>
 
     <div class = "container">
         <div>
             <h2>Current Cover</h2>
             <form method="post" enctype="multipart/form-data">
-                <label for ="covered">New Cover</label>
+                <?php
+                if($book['cover']!=''){
+                    echo '<td>'. $book['cover']. '</td>';
+                }else{
+                    echo '<td><img src= "uploads/cover.jpg" style = width:100px; height :auto;> </td>';
+                }
+                ?>
+
                 <div  class="form-group mb-3">
+                    <label for ="covered">New Cover</label>
                     <input type="file" name="imageFile" accept="image/*" class="form-control">
                 </div>
                 <div  class="form-group mb-3">
-                    <input type="submit" name="btnUpload" value="Upload Image" class="btn btn-primary">
+                    <input type="submit" name="btnUpload" value="Change Book Cover" class="btn btn-primary">
                 </div>
 
 

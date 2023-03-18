@@ -6,13 +6,13 @@ if(isset($bookid)){
         $isbn = filter_input(INPUT_GET, 'isbn');
         $fileName = filter_input(INPUT_GET, 'isbn');
         $targetDirectory = 'uploads/';
-        $fileExtension = pathinfo($_FILES['txtFile']['name'], PATHINFO_EXTENSION);
+        $fileExtension = pathinfo($_FILES['imageFile']['name'], PATHINFO_EXTENSION);
         $cover = $fileName.'.'.$fileExtension;
         $pathToUpload = $targetDirectory . $fileName . '.' . $fileExtension;
         if($_FILES['txtFile']['size']>1024*2048){
             echo 'File is to big than 2MB, please resize the file';
         }else{
-            move_uploaded_file($_FILES['txtFile']['tmp_name'], $pathToUpload);
+            move_uploaded_file($_FILES['imageFile']['tmp_name'], $pathToUpload);
             $results = updateCover($isbn, $cover);
             if($results){
                 header('location:index.php?menu=book');

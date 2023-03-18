@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--    Anggota kelompok : -->
+<!--    2172014 Fabio Michael J-->
+<!--    2172024 Adhitya Putra Pratama-->
     <?php
     session_start();
     if(!isset($_SESSION['is_user_logged'])){

@@ -102,13 +102,13 @@ function deleteBookFromDb($isbn)
     $link = null;
     return $result;
 }
-function updateCover($isbn, $cover){
+function updateCover($isbn, $newCover){
     $result = 0;
     $link = createMySQLConnection();
     $link -> beginTransaction();
     $query = 'UPDATE book SET cover = ? WHERE isbn = ?';
     $stmt = $link->prepare($query);
-    $stmt->bindParam(1,$cover,PDO::PARAM_STR);
+    $stmt->bindParam(1,$newCover,PDO::PARAM_STR);
     $stmt->bindParam(2,$isbn,PDO::PARAM_STR);
     if($stmt->execute()){
         $link -> commit();
